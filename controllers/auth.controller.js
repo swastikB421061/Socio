@@ -101,13 +101,10 @@ export const getMe = async (req, res) => {
         if (!req.user || !req.user._id) {
             return res.status(401).json({ error: "Unauthorized" });
         }
-
         const user = await User.findById(req.user._id).select("-password");
-
         if (!user) {
             return res.status(404).json({ error: "User not found" });
         }
-
         console.log("User fetched:", user);
         res.status(200).json(user);
     } catch (error) {

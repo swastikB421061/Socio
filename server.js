@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://we-connect-with-u.netlify.app', // Allow only this origin
+  origin: '*', // Allow only this origin
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 };
 
